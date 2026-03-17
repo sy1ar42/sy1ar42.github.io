@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 :root \{\
+    --p: #8e1c1c; --s: #2c3e50; --bg: #e2e8f0; --white: #ffffff;\
+    --gold: #d4af37; --blue: #3498db; --border: #cbd5e0;\
+\}\
+body, html \{ margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: #1e293b; overflow: hidden; \}\
+#app-container \{ display: flex; height: 100vh; \}\
+\
+/* Loading UI */\
+#loading-overlay \{ position:fixed; top:0; left:0; width:100%; height:100%; background:var(--white); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; \}\
+.spinner \{ border: 4px solid #f3f3f3; border-top: 4px solid var(--p); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; \}\
+@keyframes spin \{ 0% \{ transform: rotate(0deg); \} 100% \{ transform: rotate(360deg); \} \}\
+\
+#mobile-toggle \{ display: none; position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 12px 24px; background: var(--p); border-radius: 50px; color: white; border: none; font-weight: bold; cursor: pointer; \}\
+\
+.sidebar \{ width: 380px; background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.3s ease; \}\
+.sidebar header \{ background: var(--s); color: white; padding: 20px; text-align: center; \}\
+.io-group \{ display: flex; gap: 5px; margin-top: 10px; \}\
+.io-group button \{ background: #475569; flex: 1; font-size: 0.75rem; padding: 8px; border-radius: 4px; color: white; border: none; cursor: pointer; \}\
+.scroll-area \{ flex: 1; overflow-y: auto; padding: 20px; \}\
+section \{ margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; \}\
+label \{ display: block; font-size: 0.7rem; font-weight: 800; color: #64748b; margin-bottom: 8px; text-transform: uppercase; \}\
+.input-grid \{ display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 5px; \}\
+\
+.viewport \{ flex: 1; overflow-y: auto; padding: 40px; display: flex; justify-content: center; \}\
+.sheet \{ background: var(--white); width: 100%; max-width: 850px; padding: 45px; border-top: 12px solid var(--p); position: relative; min-height: 1050px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); \}\
+.sheet-header \{ display: flex; justify-content: space-between; border-bottom: 5px solid var(--p); padding-bottom: 15px; margin-bottom: 30px; \}\
+.identity h1 \{ margin: 0; font-size: 2.8rem; color: var(--s); letter-spacing: -1.5px; \}\
+.prof-box \{ text-align: center; border: 2px solid var(--s); padding: 5px 15px; border-radius: 8px; \}\
+.prof-box div \{ font-size: 1.8rem; font-weight: bold; color: var(--p); \}\
+\
+.attr-grid \{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 25px; \}\
+.attr-card \{ border: 1px solid var(--border); border-radius: 8px; text-align: center; padding: 8px; background: #fff; \}\
+.attr-card b \{ font-size: 1.6rem; display: block; color: var(--p); \}\
+.attr-val \{ font-size: 0.75rem; font-weight: bold; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; \}\
+\
+.main-content \{ display: grid; grid-template-columns: 260px 1fr; gap: 25px; \}\
+.card \{ border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-bottom: 20px; \}\
+.card h3 \{ margin: 0 0 10px 0; font-size: 0.75rem; color: var(--p); border-bottom: 2px solid #f1f5f9; text-transform: uppercase; display: flex; justify-content: space-between; \}\
+\
+.dot \{ width: 11px; height: 11px; border: 1.5px solid #64748b; border-radius: 50%; display: inline-block; cursor: pointer; margin-right: 6px; \}\
+.dot.half \{ background: var(--blue); \}\
+.dot.prof \{ background: var(--s); \}\
+.dot.exp \{ background: var(--gold); border-color: var(--gold); \}\
+.skill-row \{ display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #f8fafc; font-size: 0.8rem; \}\
+\
+.combat-row \{ display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px; \}\
+.stat-box \{ border: 2px solid var(--s); border-radius: 8px; padding: 10px; text-align: center; \}\
+.stat-box b \{ display: block; font-size: 1.5rem; \}\
+.stat-box small \{ font-size: 0.55rem; font-weight: 800; color: #64748b; text-transform: uppercase; \}\
+\
+.resource-grid \{ display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 8px; \}\
+.res-item \{ border: 1px solid #eee; padding: 6px; border-radius: 4px; text-align: center; background: #fafafa; \}\
+.checkbox-group \{ display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; \}\
+\
+.traits-area \{ white-space: pre-wrap; font-size: 0.75rem; line-height: 1.6; \}\
+input, select, button \{ font-size: 16px; padding: 10px; border-radius: 6px; border: 1px solid var(--border); width: 100%; margin: 3px 0; \}\
+button \{ background: var(--s); color: white; font-weight: bold; cursor: pointer; border: none; \}\
+#wipe-btn \{ background:#cc0000; margin-top:30px; color:white; \}\
+\
+@media (max-width: 1024px) \{\
+    #mobile-toggle \{ display: block; \}\
+    .sidebar \{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; transform: translateX(-100%); z-index: 99; \}\
+    .sidebar.active \{ transform: translateX(0); \}\
+    .main-content \{ grid-template-columns: 1fr; \}\
+    .attr-grid \{ grid-template-columns: repeat(3, 1fr); \}\
+\}\
+@media print \{ .no-print \{ display: none !important; \} .sheet \{ box-shadow: none; border: none; padding: 0; \} \}\
+}
